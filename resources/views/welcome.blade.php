@@ -17,6 +17,7 @@
 
 <body>
 <h1>Ciao</h1>
+@yield('pizza')
 <h2>aiesfbgaiwrbfgaiuwerb</h2>
 </body>
 
