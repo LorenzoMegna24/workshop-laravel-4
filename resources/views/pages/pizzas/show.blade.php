@@ -18,6 +18,12 @@
                     <p class="card-text">{{$single_pizza['ingredienti']}}</p>
                     {{-- BUTTON EDIT --}}
                     <a class="btn btn-primary" href="{{route('pizzas.edit', $single_pizza)}}">Change</a>
+                    <form action="{{route('pizzas.destroy', $single_pizza)}}" method="POST" class="d-inline">
+                        @csrf
+                        @method('DELETE')
+                        {{-- BUTTON DELETE --}}
+                        <button class="btn btn-danger" onclick="return confirmDelete()">Delete</button>    
+                    </form>
                 </div>
             </div>
         </div>
