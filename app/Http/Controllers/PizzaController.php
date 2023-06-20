@@ -46,7 +46,7 @@ class PizzaController extends Controller
 
         $newPizza->save();
 
-        return redirect()->route('pizzas.home');
+        return redirect()->route('home');
     }
 
     /**

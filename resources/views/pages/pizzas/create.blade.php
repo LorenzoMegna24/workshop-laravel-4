@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('welcome')
 
 @section('title')
     PIZZA | Create

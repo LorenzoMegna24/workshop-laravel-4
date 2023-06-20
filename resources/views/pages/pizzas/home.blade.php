@@ -4,7 +4,7 @@
     PIZZA | Home
 @endsection
 
-@section('pizza')
+@section('content')
     <div class="container">
         <div class="row">
             @foreach($pizzas as $elem)

@@ -18,10 +18,17 @@
 <body>
     <header>
         <h1>Lista pizze</h1>
-        <a class="nav-link" href="{{route('pages.pizzas.create')}}">Create</a>    
+        <div class="container d-flex my-3">
+            {{-- HOME  --}}
+            <a class="nav-link mx-2" href="{{route('pizzas.index')}}">Home</a>
+            {{-- CREATE --}}
+            <a class="nav-link mx-2" href="{{route('pizzas.create')}}">Create</a>  
+        </div>
+         
     </header>
     
-    @yield('pizza')
+    @yield('content')
+
     <h2>aiesfbgaiwrbfgaiuwerb</h2>
 </body>
 
