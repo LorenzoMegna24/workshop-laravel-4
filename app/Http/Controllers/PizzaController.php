@@ -57,7 +57,9 @@ class PizzaController extends Controller
      */
     public function show($id)
     {
-        //
+        $single_pizza = Pizza::findOrFail($id);
+
+        return view('pages.pizzas.show', compact('single_pizza'));
     }
 
     /**
@@ -66,9 +68,9 @@ class PizzaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Pizza $pizza)
     {
-        //
+        return view('pages.pizzas.edit', compact('pizza'));
     }
 
     /**
@@ -78,9 +80,13 @@ class PizzaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Pizza $pizza)
     {
-        //
+        $change_pizza = $request->All();
+
+        $pizza->update($change_pizza);
+
+        return redirect()->route('pizzas.index', ['pizza' => $pizza->id]);
     }
 
     /**

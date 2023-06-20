@@ -1,55 +1,39 @@
-@extends('layout.app')
+@extends('welcome')
 
 @section('title')
-    DC COMICS | Edit
+    PIZZA | Edit
 @endsection
 
 @section('content')
     <div class="container">
         <h2 class="text-center">EDIT!</h2>
 
-        <form action="{{route('comics.update', $comic)}}" method="POST">
+        <form action="{{route('pizzas.update', $pizza)}}" method="POST">
 
             @csrf
             @method('PUT')
 
             <div class="form-group my-2">
-                <label class="form-label" for="">TITLE</label>
-                <input class="form-control" type="text" name="title" value="{{old('title') ?? $comic->title}}">
+                <label class="form-label" for="">NOME</label>
+                <input class="form-control" type="text" name="nome_pizza" value="{{old('nome_pizza') ?? $pizza->nome_pizza}}">
             </div>
 
             <div class="form-group my-2">
-                <label class="form-label" for="">DESCRIPTION</label>
-                <textarea class="form-control" name="description" cols="30" rows="10">{{old('description') ?? $comic->description}}</textarea>
+                <label class="form-label" for="">INGREDIENTI</label>
+                <textarea class="form-control" name="ingredienti" cols="30" rows="10">{{old('ingredienti') ?? $pizza->ingredienti}}</textarea>
             </div>
 
             <div class="form-group my-2">
-                <label class="form-label" for="">THUMB</label>
-                <input class="form-control" type="text" name="thumb" value="{{old('thumb') ?? $comic->thumb}}">
+                <label class="form-label" for="">IMPASTO</label>
+                <input class="form-control" type="text" name="impasto" value="{{old('impasto') ?? $pizza->impasto}}">
             </div>
 
             <div class="form-group my-2">
-                <label class="form-label" for="">PRICE</label>
-                <input class="form-control" type="text" name="price" value="{{old('price') ?? $comic->price}}">
+                <label class="form-label" for="">TEMPO DI PREPARAZIONE</label>
+                <input class="form-control" type="text" name="tempo_preparazione" value="{{old('tempo_preparazione') ?? $pizza->tempo_preparazione}}">
             </div>
 
-            <div class="form-group my-2">
-                <label class="form-label" for="">SERIES</label>
-                <input class="form-control" type="text" name="series"
-                value="{{old('series') ?? $comic->series}}">
-            </div>
-
-            <div class="form-group my-2">
-                <label class="form-label" for="">SALE DATE</label>
-                <input class="form-control" type="date" name="sale_date" value="{{old('sale_date') ?? $comic->sale_date}}">
-            </div>
-
-            <div class="form-group my-2">
-                <label class="form-label" for="">TYPE</label>
-                <input class="form-control" type="text" name="type" value="{{old('type') ?? $comic->type}}">
-            </div>
-
-            <button type="submit" class="btn btn-primary my-3">CHANGE COMIC</button>
+            <button type="submit" class="btn btn-primary my-3">CHANGE PIZZA</button>
         </form>    
     </div>
     

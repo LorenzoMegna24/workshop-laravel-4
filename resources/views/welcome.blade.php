@@ -17,7 +17,8 @@
 
 <body>
     <header>
-        <h1>Lista pizze</h1>
+        
+        <h1 class="text-center">Lista pizze</h1>
         <div class="container d-flex my-3">
             {{-- HOME  --}}
             <a class="nav-link mx-2" href="{{route('pizzas.index')}}">Home</a>
@@ -28,8 +29,6 @@
     </header>
     
     @yield('content')
-
-    <h2>aiesfbgaiwrbfgaiuwerb</h2>
 </body>
 
 </html>

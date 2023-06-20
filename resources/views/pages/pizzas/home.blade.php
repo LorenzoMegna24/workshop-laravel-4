@@ -10,8 +10,12 @@
             @foreach($pizzas as $elem)
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">{{$elem['nome_pizza']}}</h5>
+                    <h5 class="card-title">
+                        <a href="{{route('pizzas.show', ['pizza' => $elem->id])}}">{{$elem['nome_pizza']}}</a>
+                    </h5>
                     <p class="card-text">{{$elem['ingredienti']}}</p>
+                    {{-- BUTTON EDIT --}}
+                    <a class="btn btn-primary" href="{{route('pizzas.edit', $elem)}}">Change</a>
                 </div>
             </div>
             @endforeach    
