@@ -10,4 +10,12 @@ class Pizza extends Model
     use HasFactory;
 
     protected $table = 'pizzas';
+
+    protected $fillable = [
+        'nome_pizza',
+        'ingredienti',
+        'impasto',
+        'tempo_preparazione',
+        'disponibilità',
+    ];
 }

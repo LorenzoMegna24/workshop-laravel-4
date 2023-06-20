@@ -16,7 +16,7 @@ class PizzaController extends Controller
     {
         $pizzas = Pizza::All();
 
-        return view('pages.home', compact('pizzas'));
+        return view('pages.pizzas.home', compact('pizzas'));
 
     }
 
@@ -27,7 +27,7 @@ class PizzaController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.pizzas.create');
     }
 
     /**
@@ -38,7 +38,15 @@ class PizzaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->All();
+
+        $newPizza = new Pizza();
+
+        $newPizza->fill($form_data);
+
+        $newPizza->save();
+
+        return redirect()->route('pizzas.home');
     }
 
     /**

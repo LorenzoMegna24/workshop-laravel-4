@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>@yield('title')</title>
 
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -16,9 +16,13 @@
 </head>
 
 <body>
-<h1>Ciao</h1>
-@yield('pizza')
-<h2>aiesfbgaiwrbfgaiuwerb</h2>
+    <header>
+        <h1>Lista pizze</h1>
+        <a class="nav-link" href="{{route('pages.pizzas.create')}}">Create</a>    
+    </header>
+    
+    @yield('pizza')
+    <h2>aiesfbgaiwrbfgaiuwerb</h2>
 </body>
 
 </html>
